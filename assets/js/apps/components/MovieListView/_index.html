@@ -1,0 +1,23 @@
+<%   var Genres = require('apps/constants/genres') %>
+<td>
+  <a href='#users/<%= _id %>' class="btn btn-small js-show">
+    <i class="glyphicon glyphicon-eye-open"></i>
+  </a>
+</td>
+<td>
+  <%= year %>
+</td>
+<td>
+  <%= title %>
+</td>
+<td>
+  <%= Genres[genre].name %>
+</td>      
+<td>
+  <a class="btn btn-small js-edit-user">
+      <i class="glyphicon glyphicon-pencil"></i>
+  </a>
+  <a class="btn btn-small js-delete">
+      <i class="glyphicon glyphicon-trash"></i>
+  </a>
+</td>

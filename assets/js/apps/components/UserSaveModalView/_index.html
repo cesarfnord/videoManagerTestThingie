@@ -1,0 +1,35 @@
+<div class="modal-dialog">
+  <form class="js-edit-form modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">
+        <a class="btn btn-small js-back-button" data-dismiss="modal">
+            <i class="glyphicon glyphicon-arrow-left"></i>
+        </a>
+        <% if (lastName) { %>
+          Edit <%= lastName %>, <%= firstName %>
+        <% } else { %>
+          Add new User
+        <% } %>
+      </h4>
+    </div>
+    <div class="modal-body">
+      <label class="control-label">
+        <input class="input" name="firstName" type="text" value="<%= firstName %>"
+        placeholder="Name" />
+      </label>
+      <label class="control-label">
+        <input name="lastName" type="text" value="<%= lastName %>"
+        placeholder="Last Name" />
+      </label>
+      <label class="control-label">
+        <input name="email" type="text" value="<%= email %>"
+        placeholder="Email" />
+      </label>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success js-save-button">
+        Save
+      </button>
+    </div>
+  </form>
+</div>

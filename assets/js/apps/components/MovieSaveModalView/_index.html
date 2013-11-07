@@ -1,0 +1,45 @@
+<%   var Genres = require('apps/constants/genres') %>
+<div class="modal-dialog">
+  <form class="js-edit-form modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">
+        <a class="btn btn-small js-back-button" data-dismiss="modal">
+            <i class="glyphicon glyphicon-arrow-left"></i>
+        </a>
+        <% if (title) { %>
+          Edit <%= title %>
+        <% } else { %>
+          Add new Movie
+        <% } %>
+      </h4>
+    </div>
+    <div class="modal-body">
+      <label class="control-label">
+        <input class="input" name="title" type="text" value="<%= title %>"
+        placeholder="Title" />
+      </label>
+      <label class="control-label">
+        <input class="input" name="year" type="text" value="<%= year %>"
+        placeholder="Year" />
+      </label>
+      <label class="control-label">
+        <select name="genre">
+          <% for (var i = Genres.length - 1; i >= 0; i--) {%>
+            <option value="<%= Genres[i].id %>"
+              <% if (genre === i) { %>
+                selected
+              <% } %>
+            >
+              <%= Genres[i].name %>
+            </option>
+          <% }; %>
+        </select>
+      </label>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success js-save-button">
+        Save
+      </button>
+    </div>
+  </form>
+</div>
